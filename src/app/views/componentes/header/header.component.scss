@@ -1,0 +1,18 @@
+.peregrino{
+  width: 30%;
+  float: left;
+  margin-left: 5%;
+}
+
+
+@media (max-width: 769px) {
+  .peregrino {
+    width: 20%;
+  }
+}
+
+@media (max-width: 500px) {
+  .peregrino {
+    width: 30%;
+  }
+}

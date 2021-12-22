@@ -1,0 +1,35 @@
+.texto{
+  margin-left: 20px;
+}
+
+.badge{
+  padding: 5px 10px 3px 10px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.clock{
+  color: #029be2
+}
+
+.check{
+  color: #29c467;
+}
+
+.peregrino{
+  width: 30%;
+  float: left;
+}
+
+
+@media (max-width: 769px) {
+  .peregrino {
+    width: 20%;
+  }
+}
+
+@media (max-width: 500px) {
+  .peregrino {
+    width: 30%;
+  }
+}

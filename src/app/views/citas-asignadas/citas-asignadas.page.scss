@@ -1,0 +1,53 @@
+.iheader{
+  background-color: #000;
+}
+
+.header{
+  display: flex;
+}
+
+.icon_paciente{
+  width: 5%;
+  font-weight: bold;
+}
+
+.title{
+  font-size: 1rem;
+  font-weight: 700;
+  margin-left: 5%;
+}
+
+.infoConsulta{
+  display: flex;
+  justify-content: space-around;
+}
+
+.hora{
+  width: 40%;
+  margin-left: 10%
+}
+
+.fecha{
+  width:60%;
+}
+
+.estatus{
+  margin: 10px;
+}
+
+.boton{
+  display: flex;
+  color: #fff;
+}
+
+.btn{
+  margin-top: 5%;
+  width: 60%;
+  margin-left: 20%;
+  font-weight: 700;
+  color: #fff;
+}
+
+.info{
+  font-weight: 700;
+}

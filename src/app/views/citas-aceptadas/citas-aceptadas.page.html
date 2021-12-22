@@ -1,0 +1,98 @@
+<app-menu></app-menu>
+<app-header></app-header>
+<ion-content>
+  <h5 class="title"><ion-icon class="calendar" name="calendar-number-outline"></ion-icon> Calendario</h5>
+  <ion-list>
+    <span *ngFor="let fecha1 of arrayCitas; let i = index">
+      <mat-accordion>
+        <mat-expansion-panel class="panel" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span class="cita">Citas para el día</span>
+            </mat-panel-title>
+            <mat-panel-description>
+              <h5 class="fecha">{{ fecha1 }}</h5>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <span *ngFor="let cita of citas">
+            <span *ngIf="fecha1 == cita.f_cita">
+              <ion-item color="success">
+                <ion-label class="header" >
+                  <h5 class="paciente">Paciente: {{cita.title}}</h5>
+                </ion-label>
+              </ion-item>
+              <ion-item >
+                <div class="estatus">
+                  <ion-label>Estado de la cita:
+                    <ion-chip color="success">
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                    <ion-label>Aceptada</ion-label>
+                    </ion-chip>
+                  </ion-label>
+                </div>
+              </ion-item>
+
+              <ion-item>
+                <mat-accordion class="infoConsulta">
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        <h5 class="info-consulta">Información de la consulta</h5>
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        <h5 class="info-consulta"><ion-icon name="add-outline"></ion-icon> Ver información</h5>
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <ion-item class="infoConsulta">
+                      <ion-label>Inicio: <span class="info">{{cita.start}}</span></ion-label>
+                    </ion-item>
+                    <ion-item class="infoConsulta">
+                      <ion-label>Fin: <span class="info">{{cita.end}}</span></ion-label>
+                    </ion-item>
+                    <ion-item class="infoConsulta">
+                      <ion-label>Fecha: <span class="info">{{cita.f_cita}}</span></ion-label>
+                    </ion-item>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </ion-item>
+
+              <ion-item>
+                <mat-accordion class="infoConsulta">
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        <h5 class="info-consulta">Información de contacto</h5>
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        <h5 class="info-consulta"><ion-icon name="add-outline"></ion-icon> Ver información</h5>
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <ion-list class="horario">
+                      <ion-item>
+                        <ion-label>Email: {{cita.extendedProps.currentCita.detPaciente.email}}</ion-label>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label>Celular: {{cita.extendedProps.currentCita.detPaciente.celular}}</ion-label>
+                      </ion-item>
+                        <ion-item class="contacto">
+                          <ion-label class="phone">Telefono: {{cita.extendedProps.currentCita.detPaciente.telefono}}</ion-label>
+                        </ion-item>
+                        <ion-item class="contacto">
+                          <ion-button class="phone" (click)="realizarLlamada(cita.extendedProps.currentCita.detPaciente.celular, cita)" class="btn" type="submit" color="success" expand="block" >
+                            <ion-icon name="call-outline"></ion-icon>
+                            Llamar
+                          </ion-button>
+                        </ion-item>
+                    </ion-list>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </ion-item>
+            </span>
+          </span>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <br>
+    </span>
+  </ion-list>
+</ion-content>

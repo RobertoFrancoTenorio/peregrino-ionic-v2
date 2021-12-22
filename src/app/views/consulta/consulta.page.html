@@ -1,0 +1,84 @@
+<app-header></app-header>
+
+<ion-content>
+  <form [formGroup]="consultaForm" (ngSubmit)="enviarConsulta()">
+    <span class="titulo">
+      <h5><ion-icon name="medkit-outline"></ion-icon> <span class="consulta">Consulta</span></h5>
+    </span>
+
+    <div class="nombre">
+      <!-- <ion-item class="datos">
+        <ion-label position="floating">Nombre del Paciente</ion-label>
+        <ion-input value={{currentPaciente.pac_primer_apellido}}></ion-input>
+      </ion-item> -->
+      <!-- <mat-form-field appearance="fill" class="datos">
+        <mat-label>Nombre del paciente</mat-label>
+        <input matInput formControlName="consulta_pac_nombre" type="text" readonly>
+      </mat-form-field> -->
+    </div>
+
+   <div class="signos">
+      <mat-form-field appearance="fill" class="signo">
+        <mat-label>Presión arterial</mat-label>
+        <input matInput formControlName="consulta_presion_arterial" type="text">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="signo">
+        <mat-label>Frecuencia cardiaca</mat-label>
+        <input matInput formControlName="consulta_frec_cardiaca" type="text">
+      </mat-form-field>
+    </div>
+
+    <div class="signos">
+      <mat-form-field appearance="fill" class="signo">
+        <mat-label>Frecuencia Respiratoria</mat-label>
+        <input matInput formControlName="consulta_frec_respiratoria" type="text">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="signo">
+        <mat-label>Temperatura (C°)</mat-label>
+        <input matInput formControlName="consulta_temp" type="text">
+      </mat-form-field>
+    </div>
+
+    <div class="text-area">
+      <mat-form-field appearance="fill" class="textArea">
+        <mat-label><ion-icon name="pencil-outline"></ion-icon> Nota medica</mat-label>
+        <textarea matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="2"
+                  cdkAutosizeMaxRows="5"
+                  formControlName="consulta_nota_medica"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="text-area">
+      <mat-form-field appearance="fill" class="textArea">
+        <mat-label><ion-icon name="heart-half-outline"></ion-icon> Diagnostico</mat-label>
+        <textarea matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="2"
+                  cdkAutosizeMaxRows="5"
+                  formControlName="consulta_diagnostico"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="text-area">
+      <mat-form-field appearance="fill" class="textArea">
+        <mat-label><ion-icon name="pulse-outline"></ion-icon> Tratamiento</mat-label>
+        <textarea matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="2"
+                  cdkAutosizeMaxRows="5"
+                  formControlName="consulta_tratamiento">
+        </textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="buttons">
+      <ion-button type="submit" [disabled]="!consultaForm.valid" class="btn" color="success"><ion-icon name="checkmark-circle-outline"></ion-icon> Guardar</ion-button>
+      <ion-button class="btn" color="danger" (click)="goToHome()"><ion-icon name="close-circle-outline" ></ion-icon> Cancelar</ion-button>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,38 @@
+<app-menu></app-menu>
+<app-header></app-header>
+
+<ion-content>
+  <ion-list>
+    <span *ngFor="let cita of citas">
+      <ion-item color="secondary">
+        <ion-label class="header" >
+          <ion-icon name="person-outline" class="icon_paciente"></ion-icon>
+          <h5 class="title">Paciente: {{cita.title}}</h5>
+        </ion-label>
+      </ion-item>
+      <ion-item class="estatus">
+        <span *ngIf="cita.estatus == 'asignada'">
+          <ion-label>Estado de la cita:
+            <ion-chip color="primary">
+              <ion-icon name="time-outline"></ion-icon>
+              <ion-label >Pendiente por revisar</ion-label>
+            </ion-chip>
+          </ion-label>
+        </span>
+      </ion-item>
+      <ion-item class="infoConsulta">
+        <ion-label class="hora">Inicio: <span class="info">{{cita.start}}</span></ion-label>
+        <ion-label class="hora">Fin: <span class="info">{{cita.end}}</span></ion-label>
+      </ion-item>
+      <ion-item class="infoConsulta">
+        <ion-label class="hora">Fecha: <span class="info">{{cita.f_cita}}</span></ion-label>
+      </ion-item>
+      <span class="boton">
+        <ion-button (click)="sweetAlert(cita)" class="btn" type="submit" color="tertiary" expand="block" >
+          Revisar Cita
+        </ion-button>
+      </span>
+      <br>
+    </span>
+  </ion-list>
+</ion-content>

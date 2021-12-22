@@ -1,0 +1,10 @@
+{
+  "name": "pererino-movil-v2",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}
